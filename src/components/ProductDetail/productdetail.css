@@ -1,0 +1,57 @@
+.product-division{
+    display: flex;
+    margin: 0px 70px;
+}
+.cart-division{
+    width: 900px;
+    /* background-color: aqua;   */
+}
+.car-infomation-section{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid gray;
+}
+.cart-flex{
+    display: flex;
+    justify-content: space-between;
+}
+.cart-payment-information{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(114, 114, 134);
+}
+.cart-card{
+    border: 1px solid;
+}
+.cart-payment-information2{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(78, 78, 97);
+}
+.product-price-container{
+   width: 400px;
+   margin-left: 40px;
+   /* background-color: aliceblue; */
+}
+.product-logo{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.product-payment{
+    display: flex;
+    justify-content: space-around;
+}
+.product-button button{
+    width: 90%;
+    margin: 4px;
+    padding: 8px;
+}
+.product-button p{
+    text-align: center;
+}
+.product-cart{
+    border: 10px solid white;
+    background-color: white;
+
+}

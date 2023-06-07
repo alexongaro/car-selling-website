@@ -1,0 +1,42 @@
+.cart-division{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* border: 3px solid; */
+}
+.cart-price{
+    float: right;
+    /* background-color: aqua; */
+}
+.cart-calculations{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.delete-cart{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: orange; */
+}
+.delete-cart button{
+    background-color: rgb(224, 150, 15);
+    border: none;
+}
+ 
+.delete{
+    padding: 5px;
+    background-color:orange;
+    margin: 2px;
+}
+.cart-container{
+    width: 70%;
+    height: 60%;
+    border: 1px solid;
+    margin: 9px;
+}
+.cart-buttons button{
+    padding: 12px;
+    border: none;
+    margin: 1px;
+    background-color: orange;
+}

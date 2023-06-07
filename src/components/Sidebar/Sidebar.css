@@ -1,0 +1,23 @@
+.sidebar-button button{
+    padding: 8px 32px;
+}
+.container{
+    width: 275.1px;
+    background-color: white;
+}
+.price{
+    display: flex;
+    justify-content: space-around;
+}
+.choose-button{
+    display: flex;
+    justify-content: space-around;
+}
+.search-buttons{
+    display: flex;
+    flex-direction: column;
+}
+.search-buttons button{
+    padding: 8px;
+    margin: 2px;
+}

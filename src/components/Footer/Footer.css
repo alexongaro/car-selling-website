@@ -1,0 +1,21 @@
+.footer-middle-component{
+    display: flex;
+    justify-content: space-around;
+}
+.footer-first-component{
+    display: flex;
+    align-items: center;
+}
+.footer-first-component img{
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+}
+.footer-final-component{
+    text-align: center;
+}
+footer{
+    margin-top: 8%;
+    background-color: rgb(47, 45, 45);
+    color: white;
+}
