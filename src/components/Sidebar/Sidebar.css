@@ -1,23 +1,40 @@
-.sidebar-button button{
-    padding: 8px 32px;
-}
-.container{
-    width: 275.1px;
-    background-color: white;
-}
-.price{
+.vertical-tab {
     display: flex;
-    justify-content: space-around;
-}
-.choose-button{
-    display: flex;
-    justify-content: space-around;
-}
-.search-buttons{
-    display: flex;
-    flex-direction: column;
-}
-.search-buttons button{
-    padding: 8px;
-    margin: 2px;
-}
+  }
+  
+  .tab-navigation {
+    flex: 0 0 200px;
+    background-color: #f0f0f0;
+    position: sticky;
+    top: 180px;
+    height: 500px;
+    width: 200px;
+  }
+  
+  .tab-item {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .tab-item.active {
+    background-color: #ccc;
+  }
+  
+  .tab-content {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .tab-pane {
+    display: none;
+  }
+  
+  .tab-pane.active {
+    display: block;
+  }
+  .card{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    /* background-color: black; */
+}  

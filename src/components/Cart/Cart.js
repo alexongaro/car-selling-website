@@ -1,12 +1,42 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Cart.css"
 
 function Cart({cart,handledelete}) {
-    console.log(cart)
+  const checkout =()=>{
+    fetch("/create-checkout-session",{
+      method:"POSt",
+      headers:{
+          "content-type":"application/json"
+      },
+      body:JSON.stringify({
+          items: [
+              {id:1,quantity:3},
+              {id:2,quantity:1},
+          ]
+      })
+  }).then(res=>{
+      if(res.ok)return res.json()
+      return res.json().then(json => Promise.reject(json))
+  }).then(({url})=>{
+      // console.log(url)
+      window.location = url
+  }).catch(e=>{
+      console.log(e.error)
+  })
+  }
+  const [price,setPrice]=useState(0)
+  const handleprice =()=>{
+    let ans =0
+    cart.map((item) =>(ans+=item.amount * item.price)) 
+    setPrice(ans)
+  }
+  useEffect(()=>{
+    handleprice()
+  },[])
   return (
     <div>
       <h4>Switch and Save: Low APRs across hundreds of quality used car</h4>
-      <div className=''>
+      <div className='subtotal-division'>
         {cart.map((item)=>
           <div className='cart-container'>
             <div className='cart-division'>
@@ -37,7 +67,17 @@ function Cart({cart,handledelete}) {
               <h3>total price:</h3>
             </div>
           </div>
+
+          
         )}
+        <div className='subtotal-container'>
+          <h3>CART SUMMMARY</h3>
+          <div className='cart-subtotal'>
+            <h3>subtotal</h3>
+            <p>ksh {price}</p>
+          </div>
+          <button onClick={()=>checkout()}>check out ksh({price})</button>
+        </div>
       </div>  
     </div>
   )

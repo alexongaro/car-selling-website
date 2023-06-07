@@ -1,11 +1,7 @@
 import React from 'react'
 import "./Payment.css"
-function Payment(payment={payment},handlepayment=undefined) {
-  console.log(Payment)
-  // Payment.map((item)=>{
-  //   console.log(item.name)
-  // }
-  // )
+function Payment(payment={payment},handlepayment=handlepayment) {
+  // console.log(item.year)
   return (
     <div>
       

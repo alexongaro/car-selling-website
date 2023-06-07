@@ -13,20 +13,12 @@ import Cart from './components/Cart/Cart';
 import Payment from './components/Payment/Payment';
 function App() {
   const [cart, setCart] = useState([])
-  const[payment,setPayment]=useState([])
   const [product,setProduct]=useState([])
   const [warning,setWarning]=useState(false)
   const handlepayment=(item)=>{
-    if(payment.length===0){
-    setPayment([item])
-    console.log(payment)
-      
-    }
-    console.log(payment)
+    return item
   }
- 
-  const handleitem=(item)=>{
-    
+  const handleitem=(item)=>{  
     let ispresent = false
     product.map((product)=>{
       if(product.id===item.id){
@@ -71,7 +63,7 @@ function App() {
         <Login />
       </Route> 
       <Route path="/payment">
-        <Payment payment={payment}/>
+        <Payment handlepayment={handlepayment}/>
       </Route>    
       <Route path="/register">
         <Register />

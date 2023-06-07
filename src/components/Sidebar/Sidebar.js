@@ -1,42 +1,64 @@
 import './Sidebar.css'
-const Sidebar = ()=>{
+import itemListArray from '../data';
+import Card from '../Card/Card';
+import React,{useState} from 'react';
+const Sidebar = ({handleitem})=>{
+    const[searchTerm,setSearchTerm]=useState("")
+      const [selectedIndex, setSelectedIndex] = useState(0);
+
+      const handleTabClick = (index) => {
+        setSelectedIndex(index);
+      };
     return(
         <>
-        <div className='main-division'>
-        <section className='container'>
-            <div className='sidebar-button'>
-               <button>Montly price</button>
-               <button>Total price</button>
+        <div>
+        <div className='postalcode-area'>
+                    <section className='postal-info'>
+                      <span className="material-symbols-outlined location">location_on</span>
+                      <div className=''>
+                      <p>find a vehicle near you</p>
+                      <p>please enter your postal code to view the nearest vehicle near you</p>  
+                      </div>    
+                    </section>
+                    <section>
+                        <form>
+                            <input placeholder='Enter your post code' onChange={(e)=>setSearchTerm(e.target.value)}/>
+                            <button>search</button>
+                        </form>
+                    </section>
+                </div>
+        <div className="vertical-tab">  
+            <div className="tab-navigation">
+                {itemListArray.map((itemList, index) => (
+                <div
+                    key={index}
+                    className={`tab-item ${index === selectedIndex ? 'active' : ''}`}
+                    onClick={() => handleTabClick(index)}
+                >
+                    {itemList[0].name}
+                </div>
+                ))} 
             </div>
-            <div className='price'>
-                <span>Min price</span>
-                <span>Max price</span>
+            <div className="tab-content">
+            <div className='card'>
             </div>
-            <div className='choose-button'>
-                <button>choose..</button>
-                <button>choose..</button>
+                <div className='card'>{itemListArray[selectedIndex].map((item)=>{
+                   if(setSearchTerm==''){
+                 return  <Card item={item} handleitem={handleitem}/>
+                   }else if(item.name.toLowerCase().includes(searchTerm.toLowerCase())){
+                    return  <Card item={item} handleitem={handleitem}/>
+                   }
+                }
+                
+                
+                
+                )}</div>
+        
+
+                
             </div>
-            <div className='search-buttons'>
-                <button>promotions</button>
-                <button>stock type</button>
-                <button>vehicle type</button>
-                <button>make and model</button>
-                <button>color</button>
-                <button>body style</button>
-                <button>No.of doors</button>
-                <button>Trasmition</button>
-                <button>Fuel type</button>
-                <button>age </button>
-                <button>Milage</button>
-                <button>MPG</button>
-                <button>CO2</button>
-                <button>Offer Type</button>
-                <button>Finance Type</button>
-                <button>clear</button>
-            </div>
-        </section>
+    </div>
         </div>
-       
         </>
     )
 }

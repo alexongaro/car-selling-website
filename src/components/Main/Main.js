@@ -7,9 +7,9 @@ const Main = ({handleitem})=>{
         <>
         <div className='main-division'>
         <section className='container'>
-         <Sidebar />
+         <Sidebar handleitem={handleitem}/>
         </section>
-        <section className='listing'>
+        {/* <section className='listing'>
             <div>
                 <div className='postalcode-area'>
                     <section className='postal-info'>
@@ -30,7 +30,7 @@ const Main = ({handleitem})=>{
             <div className='card'>
                { list.map((item)=>( <Card key={item.id} item={item}  handleitem={handleitem}/> ))}
             </div>
-        </section>
+        </section> */}
         </div>
        
         </>

@@ -2,7 +2,7 @@
 import "./Card.css"
 import {Link} from 'react-router-dom'
 const Card = ({item,handleitem})=>{
-   const {name,price,location,image,year,id}= item
+   const {name,price,location,image,year,id,content}= item
    return(
     <>
     <div className="card-container" onClick={()=>{handleitem(item)}}>
@@ -17,11 +17,12 @@ const Card = ({item,handleitem})=>{
          </div>
          <div className="card-location">
          <span className="material-symbols-outlined">location_on</span>
-         <span>in stock at BMW {location}</span>
+         <span>in stock at {location}</span>
          </div>
     </div>
-
     </>
    )
 }
-export default Card 
+export default Card
+
+

@@ -33,7 +33,7 @@ return(
             <input type="email" value={email} onChange={(e)=>{setEmail(e.target.value)}} required/>
             <label for='password'>password</label>
             <input type="password" name="password" value={password} onChange={(e)=> setPassword(e.target.value)} required/>
-            <button type="submit">continue</button>
+            <button type="submit">log in</button>
             <p>by continuing you agree to our condition of use and privacy notice</p>
         </form>
         <div className="creat-account-section">

@@ -40,3 +40,14 @@
     margin: 1px;
     background-color: orange;
 }
+.cart-subtotal{
+    display: flex;
+    justify-content: space-between;
+}
+.subtotal-container{
+    width: 300px;
+    height: 200px;
+    float: right;
+    background-color: white;
+    border: 1px solid;
+}
